@@ -1,0 +1,18 @@
+version: '3'
+services:
+  bwt:
+    image: lucee/lucee:6.0-nginx
+    ports: 
+      - "80:80"
+    container_name: cfml-app
+    environment:
+      - env=dev
+      - LUCEE_ADMIN_PASSWORD=Test123#
+    command:
+    #  - echo ${LUCEE_PASSWORD} > /lucee/lucee-server/context/password.txt 
+    env_file:
+      - ./config/.env
+    volumes:
+      - ./cfml:/var/www
+      - ./config/config.json:/var/config.json
+      - ./config/nginx/conf.d:/etc/nginx/conf.d

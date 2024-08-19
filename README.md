@@ -1,6 +1,6 @@
 Lucee 6, and Nginx
 
-Start locally by runnign:
+Start locally by running:
 
 ```docker compuse up ( locally )```
 
